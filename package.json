@@ -1,0 +1,18 @@
+{
+	"name": "nodejs-app-template",
+	"version": "0.0.0",
+	"description": "Node.js app template",
+	"main": "",
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Rafal-Majewski/nodejs-app-template.git"
+	},
+	"author": "Rafał Majewski",
+	"license": "CC0-1.0",
+	"bugs": {
+		"url": "https://github.com/Rafal-Majewski/nodejs-app-template/issues"
+	},
+	"homepage": "https://github.com/Rafal-Majewski/nodejs-app-template#readme"
+}
