@@ -2,8 +2,11 @@
 	"name": "nodejs-app-template",
 	"version": "0.0.0",
 	"description": "Node.js app template",
-	"main": "",
+	"main": "./src/main.ts",
 	"scripts": {
+		"start": "NODE_ENV=production node ./dist/src/main.js",
+		"build": "tsc",
+		"preview": "NODE_ENV=development node ./dist/src/main.js"
 	},
 	"repository": {
 		"type": "git",
@@ -14,5 +17,9 @@
 	"bugs": {
 		"url": "https://github.com/Rafal-Majewski/nodejs-app-template/issues"
 	},
-	"homepage": "https://github.com/Rafal-Majewski/nodejs-app-template#readme"
+	"homepage": "https://github.com/Rafal-Majewski/nodejs-app-template#readme",
+	"devDependencies": {
+		"@types/node": "^18.11.9",
+		"typescript": "^4.8.4"
+	}
 }
