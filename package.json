@@ -12,7 +12,9 @@
 		"prettier-fix": "prettier --write .",
 		"prettier-check": "prettier --check .",
 		"eslint-fix": "eslint --fix .",
-		"eslint-check": "eslint --max-warnings 0 ."
+		"eslint-check": "eslint --max-warnings 0 .",
+		"typescript-check": "tsc --noEmit",
+		"npm-audit-check": "npm audit --audit-level=low"
 	},
 	"repository": {
 		"type": "git",
