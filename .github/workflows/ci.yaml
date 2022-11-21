@@ -41,6 +41,11 @@ jobs:
       - name: Run Jest
         run: |
           npm run jest-check
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v2
+        with:
+          name: coverage
+          path: coverage
   npm-audit-check:
     name: NPM audit check
     runs-on: ubuntu-latest
