@@ -14,7 +14,9 @@
 		"eslint-fix": "eslint --fix .",
 		"eslint-check": "eslint --max-warnings 0 .",
 		"typescript-check": "tsc --noEmit",
-		"npm-audit-check": "npm audit --audit-level=low"
+		"npm-audit-check": "npm audit --audit-level=low",
+		"formatting-fix": "npm run prettier-fix",
+		"formatting-check": "npm run prettier-check"
 	},
 	"repository": {
 		"type": "git",
