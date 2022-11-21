@@ -42,7 +42,7 @@ jobs:
         run: |
           npm run jest-check
       - name: Upload coverage report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: coverage_report
           path: coverage_report
@@ -81,7 +81,7 @@ jobs:
         run: |
           npm run build
       - name: Upload build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build
           path: dist
