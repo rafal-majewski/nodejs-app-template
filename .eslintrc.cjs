@@ -16,6 +16,10 @@ module.exports = {
 				es2022: true,
 				node: true,
 			},
+			rules: {
+				"no-empty-function": "off",
+				"@typescript-eslint/no-empty-function": "off",
+			},
 		},
 		{
 			files: ["*.test.ts"],
@@ -37,6 +41,10 @@ module.exports = {
 				es2022: true,
 				node: true,
 			},
+			rules: {
+				"no-empty-function": "off",
+				"@typescript-eslint/no-empty-function": "off",
+			},
 		},
 		{
 			files: ["*.js", "*.cjs", "*.mjs"],
@@ -49,6 +57,9 @@ module.exports = {
 			env: {
 				es2022: true,
 				node: true,
+			},
+			rules: {
+				"no-empty-function": "off",
 			},
 		},
 		{
@@ -63,6 +74,9 @@ module.exports = {
 			env: {
 				es2022: true,
 				node: true,
+			},
+			rules: {
+				"no-empty-function": "off",
 			},
 		},
 	],
