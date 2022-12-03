@@ -1,3 +1,3 @@
-import Hello from "./Hello";
+import Hello from "./Hello.js";
 
 export {Hello};
