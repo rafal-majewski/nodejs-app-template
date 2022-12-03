@@ -30,13 +30,8 @@ module.exports = {
 				sourceType: "module",
 				ecmaVersion: 13,
 			},
-			extends: [
-				"eslint:recommended",
-				"plugin:@typescript-eslint/recommended",
-				"plugin:jest/recommended",
-				"prettier",
-			],
-			plugins: ["@typescript-eslint", "jest"],
+			extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+			plugins: ["@typescript-eslint"],
 			env: {
 				es2022: true,
 				node: true,
@@ -69,8 +64,8 @@ module.exports = {
 				ecmaVersion: 13,
 				sourceType: "module",
 			},
-			extends: ["eslint:recommended", "plugin:jest/recommended", "prettier"],
-			plugins: ["jest"],
+			extends: ["eslint:recommended"],
+			plugins: [],
 			env: {
 				es2022: true,
 				node: true,

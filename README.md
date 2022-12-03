@@ -4,7 +4,7 @@ This is a template for a Node.js TypeScript project.
 
 The following following tools have been configured:
 
-- [Jest](https://www.npmjs.com/package/jest) for unit testing
+- [Vitest](https://www.npmjs.com/package/vitest) for unit testing
 - [ESLint](https://www.npmjs.com/package/eslint) for linting
 - [Prettier](https://www.npmjs.com/package/prettier) for code formatting
 - [ts-node](https://www.npmjs.com/package/ts-node) for running TypeScript scripts
@@ -58,10 +58,10 @@ Note: This will command will fail if the application has not been compiled (no `
 ### Test the application
 
 The tests can be found in the `test` directory.
-[Jest](https://www.npmjs.com/package/jest) is used to run and write the tests.
+[Vitest](https://www.npmjs.com/package/vitest) is used to run and write the tests.
 
 ```bash
-npm run jest:check
+npm run vitest:check
 ```
 
 This will run the tests and also providing a tabular code coverage report.
@@ -110,10 +110,10 @@ npm run eslint:check
 npm run prettier:check
 ```
 
-### Jest check
+### Vitest check
 
 ```bash
-npm run jest:check
+npm run vitest:check
 ```
 
 You can later download the coverage report as an artifact named `coverage_report`.
