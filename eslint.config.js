@@ -6,7 +6,7 @@ import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as typescriptEslintParser from "@typescript-eslint/parser";
 import * as espreeParser from "espree";
 import globals from "globals";
-import eslintPrettierConfig from "eslint-config-prettier";
+import prettierEslintConfig from "eslint-config-prettier";
 
 const eslintConfig = [
 	{
@@ -137,7 +137,7 @@ const eslintConfig = [
 	{
 		ignores: [".git/**", "node_modules/**", "dist/**", ".vscode/**", "coverage_report/**"],
 	},
-	eslintPrettierConfig,
+	prettierEslintConfig,
 ];
 
 export default eslintConfig;
