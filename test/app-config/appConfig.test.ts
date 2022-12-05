@@ -5,8 +5,10 @@ import * as url from "url";
 dotenv.config({path: path.join(url.fileURLToPath(path.dirname(import.meta.url)), ".env.test")});
 import {appConfig} from "../../src/app-config/index.js";
 
-describe("appConfig", () => {
-	test("OPTIONAL_HELLO_MESSAGE", () => {
-		expect(appConfig.OPTIONAL_HELLO_MESSAGE).toBe("Hello developer");
+describe("app-config", () => {
+	describe("appConfig", () => {
+		test("OPTIONAL_HELLO_MESSAGE", () => {
+			expect(appConfig.OPTIONAL_HELLO_MESSAGE).toBe("Hello developer");
+		});
 	});
 });
