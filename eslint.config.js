@@ -135,7 +135,19 @@ const eslintConfig = [
 		},
 	},
 	{
-		ignores: [".git/**", "node_modules/**", "dist/**", ".vscode/**", "coverage_report/**"],
+		ignores: [
+			"**/node_modules/**",
+			"build/**",
+			".svelte-kit/**",
+			"pnpm-lock.yaml",
+			"package-lock.json",
+			"yarn.lock",
+			"dist/**",
+			"coverage/**",
+			"**/.vscode/**",
+			"coverage_report/**",
+			"**/.git/**",
+		],
 	},
 	prettierEslintConfig,
 ];
