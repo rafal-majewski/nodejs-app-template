@@ -3,7 +3,7 @@ import * as dotenv from "dotenv";
 import * as path from "path";
 import * as url from "url";
 dotenv.config({path: path.join(url.fileURLToPath(path.dirname(import.meta.url)), ".env.test")});
-import {appConfig} from "../../src/app-config/index.js";
+import {appConfig} from "../../src/app_config/index.js";
 
 describe("app-config", () => {
 	describe("appConfig", () => {
