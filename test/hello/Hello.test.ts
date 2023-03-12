@@ -1,6 +1,5 @@
 import {describe, test, expect} from "vitest";
-import {Hello} from "../../src/hello/index.js";
-
+import Hello from "../../src/hello/Hello.js";
 describe("hello", () => {
 	describe("Hello", () => {
 		describe("getMessage", () => {
