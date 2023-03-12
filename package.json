@@ -11,6 +11,7 @@
 		"dev": "ts-node-esm ./src/main.ts",
 		"dev:watch": "nodemon --watch ./src --exec ts-node-esm ./src/main.ts",
 		"vitest:check": "vitest --run --passWithNoTests --coverage",
+		"vitest:check:watch": "vitest --watch --passWithNoTests --coverage",
 		"prettier:fix": "prettier --write .",
 		"prettier:check": "prettier --check .",
 		"eslint:fix": "eslint --fix .",
