@@ -16,8 +16,9 @@ env:
   SETUP_NODE_NODE_VERSION: 19.7
 
 jobs:
-  release_it:
+  release:
     runs-on: ubuntu-latest
+    name: Release
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
