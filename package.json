@@ -20,7 +20,8 @@
 		"npm-audit:check": "npm audit --audit-level=low",
 		"formatting:fix": "prettier --write .",
 		"formatting:check": "prettier --check .",
-		"compile:check": "tsc --noEmit"
+		"compile:check": "tsc --noEmit",
+		"release": "release-it"
 	},
 	"repository": {
 		"type": "git",
@@ -41,6 +42,7 @@
 		"eslint-config-prettier": "^8.6.0",
 		"nodemon": "^2.0.21",
 		"prettier": "^2.8.4",
+		"release-it": "^15.8.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.9.4",
 		"vitest": "^0.29.2"
