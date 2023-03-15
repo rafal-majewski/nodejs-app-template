@@ -3,7 +3,7 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      type:
+      release_type:
         description: "Release type"
         required: true
         type: choice
@@ -16,7 +16,7 @@ env:
   SETUP_NODE_NODE_VERSION: 19.7
 
 jobs:
-  release-it:
+  release_it:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -37,4 +37,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npm run release -- --verbose --increment=${{ github.event.inputs.type }} --ci
+          npm run release -- --verbose --increment=${{ github.event.inputs.release_type }} --ci
