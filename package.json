@@ -20,7 +20,8 @@
 		"npm-audit:check": "npm audit --audit-level=low",
 		"formatting:fix": "prettier --write .",
 		"formatting:check": "prettier --check .",
-		"compile:check": "tsc --noEmit"
+		"compile:check": "tsc --noEmit",
+		"release": "release-it"
 	},
 	"repository": {
 		"type": "git",
