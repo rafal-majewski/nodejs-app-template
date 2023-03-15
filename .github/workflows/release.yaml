@@ -6,6 +6,7 @@ on:
       type:
         description: "Release type"
         required: true
+        type: choice
         options:
           - major
           - minor
