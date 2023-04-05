@@ -2,7 +2,7 @@
 	"name": "nodejs-app-template",
 	"version": "1.4.0",
 	"description": "Node.js app template",
-	"private": true,
+	"private": false,
 	"main": "./src/main.ts",
 	"scripts": {
 		"start": "node ./dist/src/main.js",
