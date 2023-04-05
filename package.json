@@ -3,7 +3,7 @@
 	"version": "1.4.0",
 	"description": "Node.js app template",
 	"private": false,
-	"main": "./src/main.ts",
+	"main": "./dist/src/main.js",
 	"scripts": {
 		"start": "node ./dist/src/main.js",
 		"test": "vitest --run --passWithNoTests --coverage",
