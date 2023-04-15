@@ -117,6 +117,7 @@ jobs:
         with:
           username: ${{secrets.DOCKER_REGISTRY_USERNAME}}
           password: ${{secrets.DOCKER_REGISTRY_PASSWORD}}
+          registry: ${{vars.DOCKER_REGISTRY_HOST}}
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
