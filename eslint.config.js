@@ -6,7 +6,6 @@ import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as typescriptEslintParser from "@typescript-eslint/parser";
 import * as espreeParser from "espree";
 import globals from "globals";
-import prettierEslintConfig from "eslint-config-prettier";
 
 const eslintConfig = [
 	{
@@ -149,7 +148,6 @@ const eslintConfig = [
 			"**/.git/**",
 		],
 	},
-	prettierEslintConfig,
 ];
 
 export default eslintConfig;
