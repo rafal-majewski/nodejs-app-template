@@ -1,6 +1,6 @@
 {
 	"name": "nodejs-app-template",
-	"version": "1.5.6",
+	"version": "1.5.7",
 	"description": "Node.js app template",
 	"private": false,
 	"main": "./dist/src/main.js",
