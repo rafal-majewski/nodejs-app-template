@@ -22,7 +22,7 @@
 		"formatting:check": "prettier --check .",
 		"compile:check": "tsc --noEmit",
 		"release": "release-it",
-		"hadolint:check": "hadolint --failure-threshold=info Dockerfile"
+		"hadolint:check": "hadolint Dockerfile"
 	},
 	"repository": {
 		"type": "git",
