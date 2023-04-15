@@ -125,8 +125,8 @@ jobs:
           push: true
           tags: ${{vars.DOCKER_REGISTRY_HOST}}/${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{ needs.compile.outputs.release_version }}
 
-  publish_to_npm:
-    name: Publish to NPM
+  publish_to_npm_registry:
+    name: Publish to npm registry
     needs: [compile]
     runs-on: ubuntu-latest
     steps:
@@ -150,8 +150,6 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: Publish to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
+      - name: Publish to npm registry
         run: |
-          npm publish
+          npm publish --registry=${{vars.NPM_REGISTRY_URL}} --$(echo -n ${{vars.NPM_REGISTRY_URL}} | sed 's/^[^\/]*\/\///'):_auth=${{secrets.NPM_REGISTRY_ACCESS_TOKEN}}
