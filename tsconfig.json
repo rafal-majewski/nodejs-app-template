@@ -52,6 +52,7 @@
 		"moduleDetection": "auto",
 		"target": "es2022",
 		"useDefineForClassFields": true,
-		"skipLibCheck": true
+		"skipLibCheck": true,
+		"allowUnusedLabels": false
 	}
 }
