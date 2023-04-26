@@ -27,7 +27,6 @@
 		"emitBOM": false,
 		"emitDeclarationOnly": false,
 		"importHelpers": true,
-		"importsNotUsedAsValues": "remove",
 		"verbatimModuleSyntax": true,
 		"inlineSourceMap": false,
 		"inlineSources": false,
