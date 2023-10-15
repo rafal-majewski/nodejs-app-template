@@ -1,4 +1,4 @@
-class Hello {
+export class Hello {
 	private readonly message: string;
 	constructor(message: string) {
 		this.message = message;
@@ -7,5 +7,3 @@ class Hello {
 		return this.message;
 	}
 }
-
-export default Hello;
