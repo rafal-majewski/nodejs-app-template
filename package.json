@@ -37,7 +37,7 @@
 	"devDependencies": {
 		"@types/node": "~20.8.6",
 		"@typescript-eslint/eslint-plugin": "~5.57.1",
-		"@typescript-eslint/parser": "~5.57.1",
+		"@typescript-eslint/parser": "~5.62.0",
 		"@vitest/coverage-c8": "~0.33.0",
 		"eslint": "~8.37.0",
 		"nodemon": "~2.0.22",
