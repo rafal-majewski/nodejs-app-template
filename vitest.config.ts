@@ -4,7 +4,7 @@ export default defineConfig({
 	test: {
 		include: ["**/*.test.ts", "**/*.test.js", "**/*.test.cjs", "**/*.test.mjs"],
 		coverage: {
-			provider: "c8",
+			provider: "v8",
 			reportsDirectory: "coverage_report",
 			reporter: ["html", "text"],
 		},
