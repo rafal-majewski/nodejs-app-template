@@ -1,9 +1,8 @@
 FROM node:19.8.1-alpine3.17
-# hadolint ignore=DL3000
 
-RUN adduser --disabled-password --gecos '' appuser
+RUN adduser --disabled-password --gecos '' appuser # hadolint ignore=DL3000
 
-WORKDIR ./abc
+
 WORKDIR /home/appuser
 
 COPY --chown=appuser:appuser package.json ./
