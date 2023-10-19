@@ -4,8 +4,10 @@ RUN adduser --disabled-password --gecos '' appuser # hadolint ignore=DL3000
 
 LABEL +?not..valid--key="foo"
 
+$AAA="Hello World"
+
 # hadolint ignore=DL3000
-WORKDIR ./home/appuser
+WORKDIR /home/appuser
 
 COPY --chown=appuser:appuser package.json ./
 COPY --chown=appuser:appuser package-lock.json ./
