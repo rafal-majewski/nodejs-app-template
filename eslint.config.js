@@ -672,7 +672,7 @@ export default [
 			"dist/**",
 			"coverage/**",
 			"**/.vscode/**",
-			"coverage_report/**",
+			"coverage-report/**",
 			"**/.git/**",
 		],
 	},

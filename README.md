@@ -65,7 +65,7 @@ npm run vitest:check
 ```
 
 This will run the tests and also providing a tabular code coverage report.
-An HTML code coverage report will be also generated in the `coverage_report` directory.
+An HTML code coverage report will be also generated in the `coverage-report` directory.
 
 ### Run the linter
 
@@ -116,7 +116,7 @@ npm run prettier:check
 npm run vitest:check
 ```
 
-You can later download the coverage report as an artifact named `coverage_report`.
+You can later download the coverage report as an artifact named `coverage-report`.
 
 ### npm audit check
 
