@@ -4,7 +4,7 @@
 		"./node_modules/**/*",
 		"./.vscode/**/*",
 		"./dist/**/*",
-		"./coverage_report/**/*",
+		"./coverage-report/**/*",
 		"./.git/**/*"
 	],
 	"compilerOptions": {
