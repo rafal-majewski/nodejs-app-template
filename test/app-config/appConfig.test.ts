@@ -1,9 +1,8 @@
-import {describe, test, expect} from "vitest";
+import {loadAppConfig} from "../../src/app-config/loadAppConfig.js";
+import {loadDotEnv} from "../../src/app-config/loadDotEnv.js";
 import * as path from "path";
 import * as url from "url";
-
-import {loadAppConfig} from "../../src/app_config/loadAppConfig.js";
-import {loadDotEnv} from "../../src/app_config/loadDotEnv.js";
+import {describe, test, expect} from "vitest";
 
 describe("app-config", () => {
 	describe("appConfig", () => {
@@ -14,7 +13,7 @@ describe("app-config", () => {
 			);
 			const dotEnv = loadDotEnv(dotEnvPath);
 			const appConfig = loadAppConfig(dotEnv);
-			expect(appConfig.OPTIONAL_HELLO_MESSAGE).toBe("Hello developer");
+			expect(appConfig.helloMessage).toBe("Hello developer");
 		});
 	});
 });
