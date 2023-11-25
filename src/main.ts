@@ -1,5 +1,5 @@
 import {Hello} from "./hello/Hello.js";
-import {appConfig} from "./instances/app_config/appConfig.js";
+import {appConfig} from "./instances/app-config/appConfig.js";
 
-const hello = new Hello(appConfig.OPTIONAL_HELLO_MESSAGE);
+const hello = new Hello(appConfig.helloMessage);
 console.log(hello.getMessage());

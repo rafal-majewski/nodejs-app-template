@@ -5,7 +5,7 @@ on:
   pull_request:
 
 env:
-  SETUP_NODE_NODE_VERSION: 19.7
+  SETUP_NODE_NODE_VERSION: 20.9.0
 
 jobs:
   hadolint_check:
@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.SETUP_NODE_NODE_VERSION }}
+          node-version: ${{env.SETUP_NODE_NODE_VERSION}}
           cache: "npm"
       - name: Install dependencies
         run: |
@@ -44,7 +44,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.SETUP_NODE_NODE_VERSION }}
+          node-version: ${{env.SETUP_NODE_NODE_VERSION}}
           cache: "npm"
       - name: Install dependencies
         run: |
@@ -61,7 +61,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.SETUP_NODE_NODE_VERSION }}
+          node-version: ${{env.SETUP_NODE_NODE_VERSION}}
           cache: "npm"
       - name: Install dependencies
         run: |
@@ -83,7 +83,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.SETUP_NODE_NODE_VERSION }}
+          node-version: ${{env.SETUP_NODE_NODE_VERSION}}
           cache: "npm"
       - name: Install dependencies
         run: |
@@ -91,9 +91,8 @@ jobs:
       - name: Run TypeScript
         run: |
           npm run typescript:check
-  compile:
-    name: Compile
-    needs: [eslint_check, vitest_check, typescript_check]
+  compile_check:
+    name: Compile check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -101,16 +100,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.SETUP_NODE_NODE_VERSION }}
+          node-version: ${{env.SETUP_NODE_NODE_VERSION}}
           cache: "npm"
       - name: Install dependencies
         run: |
           npm ci
-      - name: Compile
+      - name: Run compile check
         run: |
-          npm run compile
-      - name: Upload dist
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist
+          npm run compile:check
+  build_docker_image:
+    name: Build a Docker image
+    needs: [eslint_check, vitest_check, compile_check]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build a Docker image
+        run: |
+          docker build --tag=${{github.repository}}:${{github.sha}} --file=Dockerfile --build-arg="NODE_VERSION=${{env.SETUP_NODE_NODE_VERSION}}" .
