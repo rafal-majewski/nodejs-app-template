@@ -1,5 +1,5 @@
-import {loadAppConfig} from "../../app-config/loadAppConfig.js";
-import {loadDotEnv} from "../../app-config/loadDotEnv.js";
+import {loadAppConfig} from "../../appConfig/loadAppConfig.js";
+import {loadDotEnv} from "../../appConfig/loadDotEnv.js";
 import * as path from "path";
 
 const dotEnvPath = path.resolve(process.cwd(), ".env");

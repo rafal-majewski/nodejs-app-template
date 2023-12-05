@@ -1,10 +1,10 @@
-import {loadAppConfig} from "../../src/app-config/loadAppConfig.js";
-import {loadDotEnv} from "../../src/app-config/loadDotEnv.js";
+import {loadAppConfig} from "../../src/appConfig/loadAppConfig.js";
+import {loadDotEnv} from "../../src/appConfig/loadDotEnv.js";
 import * as path from "path";
 import * as url from "url";
 import {describe, test, expect} from "vitest";
 
-describe("app-config", () => {
+describe("appConfig", () => {
 	describe("appConfig", () => {
 		test("OPTIONAL_HELLO_MESSAGE", () => {
 			const dotEnvPath = path.resolve(
