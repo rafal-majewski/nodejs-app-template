@@ -32,7 +32,7 @@
 		"inlineSourceMap": false,
 		"inlineSources": false,
 		"isolatedModules": true,
-		"lib": [],
+		"lib": ["DOM", "ES2022"],
 		"listEmittedFiles": false,
 		"listFiles": false,
 		"maxNodeModuleJsDepth": 0,
