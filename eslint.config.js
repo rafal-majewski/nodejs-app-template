@@ -1,7 +1,3 @@
-// https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new
-// https://eslint.org/blog/2022/08/new-config-system-part-1/
-// https://eslint.org/blog/2022/08/new-config-system-part-2/
-
 import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as typescriptEslintParser from "@typescript-eslint/parser";
 // @ts-expect-error - No types available.
