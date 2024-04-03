@@ -1,3 +1,1 @@
-export type DotEnv = {
-	readonly [variableName: string]: string | undefined;
-};
+export type DotEnv = Readonly<Record<string, string>>;

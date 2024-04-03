@@ -35,9 +35,9 @@
 		"listEmittedFiles": false,
 		"listFiles": false,
 		"maxNodeModuleJsDepth": 0,
-		"module": "node16",
+		"module": "Node16",
 		"moduleDetection": "force",
-		"moduleResolution": "node16",
+		"moduleResolution": "Node16",
 		"moduleSuffixes": [""],
 		"newLine": "lf",
 		"noEmit": false,
@@ -85,5 +85,5 @@
 		"verbatimModuleSyntax": true
 	},
 	"exclude": ["**/.git/**", "**/.vscode/**", "**/node_modules/**", "coverage-report/**", "dist/**"],
-	"include": ["**/*"]
+	"include": ["**/*", "**/.*"]
 }
