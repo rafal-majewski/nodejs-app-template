@@ -1,6 +1,6 @@
 import {defineConfig} from "vitest/config";
 
-export default defineConfig({
+const vitestConfig = defineConfig({
 	plugins: [],
 	resolve: {
 		alias: [],
@@ -15,3 +15,5 @@ export default defineConfig({
 		include: ["**/*.test.ts"],
 	},
 });
+
+export default vitestConfig;
