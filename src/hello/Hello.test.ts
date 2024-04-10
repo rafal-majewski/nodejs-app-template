@@ -1,4 +1,4 @@
-import {Hello} from "../../src/hello/Hello.js";
+import {Hello} from "./Hello.js";
 import {describe, test, expect} from "vitest";
 
 describe("hello", (): void => {
