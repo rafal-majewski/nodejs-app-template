@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
-RUN npm run compile
+RUN find ./src -name "*.test.ts" -type f -delete && npm run compile
 FROM node:${NODE_VERSION}-alpine3.17
 RUN adduser --disabled-password --gecos '' appuser
 WORKDIR /home/appuser
