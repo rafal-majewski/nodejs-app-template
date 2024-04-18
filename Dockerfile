@@ -12,4 +12,4 @@ COPY --from=compiler --chown=appuser:appuser /app/package.json /app/package-lock
 COPY --from=compiler --chown=appuser:appuser /app/dist ./dist
 RUN chown -R appuser:appuser /home/appuser && npm ci --production
 USER appuser
-ENTRYPOINT ["node", "./dist/main.js"]
+ENTRYPOINT ["node", "./dist/src/main.js"]
