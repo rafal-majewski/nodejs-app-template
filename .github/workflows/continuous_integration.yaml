@@ -10,7 +10,7 @@ env:
 jobs:
   build_docker_image:
     name: Build a Docker image
-    needs: [eslint_check, hadolint_check, vitest_check, compile_check]
+    needs: [compile_check, eslint_check, hadolint_check, vitest_check]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
