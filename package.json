@@ -7,7 +7,7 @@
 		"dotenv": "16.3.1",
 		"envalid": "8.0.0"
 	},
-	"description": "SvelteKit app template",
+	"description": "Node.js app template",
 	"devDependencies": {
 		"@stylistic/eslint-plugin": "1.7.0",
 		"@types/node": "20.11.28",
