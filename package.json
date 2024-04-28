@@ -9,7 +9,7 @@
 	},
 	"description": "Node.js app template",
 	"devDependencies": {
-		"@stylistic/eslint-plugin": "1.7.0",
+		"@stylistic/eslint-plugin": "1.7.2",
 		"@types/node": "20.11.28",
 		"@typescript-eslint/eslint-plugin": "7.0.0",
 		"@typescript-eslint/parser": "6.17.0",
