@@ -2,15 +2,6 @@ name: Release
 
 on:
   workflow_dispatch:
-    inputs:
-      release_type:
-        description: "Release type"
-        required: true
-        type: choice
-        options:
-          - major
-          - minor
-          - patch
 
 env:
   NODE_VERSION: 20.9.0
@@ -135,6 +126,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -151,7 +144,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          npm run release -- --verbose --increment=${{github.event.inputs.release_type}} --ci
+          npm run release -- --verbose --ci
       - name: Remember release version
         id: remember_release_version
         run: |
