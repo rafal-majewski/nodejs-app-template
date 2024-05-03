@@ -43,7 +43,7 @@
 		"eslint:fix": "eslint --max-warnings 0 --fix .",
 		"prettier:check": "prettier --check .",
 		"prettier:fix": "prettier --write .",
-		"release": "release-it",
+		"release": "release-it --config='./.release-it.ts'",
 		"vitest:check": "vitest run --passWithNoTests --coverage",
 		"vitest:check:watch": "vitest --watch --passWithNoTests --coverage"
 	},
