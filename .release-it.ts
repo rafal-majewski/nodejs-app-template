@@ -5,6 +5,44 @@ const releaseItConfig = {
 	npm: {
 		publish: false,
 	},
+	plugins: {
+		"@release-it/conventional-changelog": {
+			ignoreRecommendedBump: false,
+			preset: {
+				header: "# Changelog",
+				name: "conventionalcommits",
+				releaseCommitMessageFormat: "release: {{currentTag}}",
+				types: [
+					{
+						hidden: false,
+						section: "Features",
+						type: "feat",
+					},
+					{
+						hidden: false,
+						section: "Bug fixes",
+						type: "fix",
+					},
+					{
+						hidden: false,
+						section: "Refactors",
+						type: "refactor",
+					},
+					{
+						hidden: false,
+						section: "Chores",
+						type: "chore",
+					},
+					{
+						hidden: false,
+						section: "Releases",
+						type: "release",
+					},
+				],
+			},
+			strictSemVer: false,
+		},
+	},
 };
 
 export default releaseItConfig;
