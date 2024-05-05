@@ -2,8 +2,9 @@
 
 This is a template for a Node.js TypeScript app.
 
-The following following tools have been configured:
+The following following tools and conventions have been configured:
 
+- "[Conventional Commits](https://www.conventionalcommits.org/)" for commit messages;
 - "[Docker](https://www.docker.com/)" for containerization;
 - "[ESLint](https://www.npmjs.com/package/eslint)" for linting;
   - "[eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)" for linting import/export;
@@ -15,6 +16,8 @@ The following following tools have been configured:
 - "[npm](https://www.npmjs.com/)" for package management and Node.js scripts;
 - "[Prettier](https://www.npmjs.com/package/prettier)" for code formatting;
   - "[prettier-plugin-svelte](https://www.npmjs.com/package/prettier-plugin-svelte)" for formatting Svelte;
+- "[release-it](https://www.npmjs.com/package/release-it)" for releasing;
+  - "[@release-it/conventional-changelog](https://www.npmjs.com/package/@release-it/conventional-changelog)" for generating changelogs automatically;
 - "[Testcontainers](https://www.npmjs.com/package/testcontainers)" for testing with Docker containers;
 - "[tsx](https://www.npmjs.com/package/tsx)" for running TypeScript code;
 - "[TypeScript](https://www.npmjs.com/package/typescript)" for TypeScript support;
@@ -104,6 +107,21 @@ Formatting errors can be automatically fixed by running:
 ```bash
 npm run prettier:fix
 ```
+
+### Commit the changes
+
+"[Conventional Commits](https://www.conventionalcommits.org/)" are used to format the commit messages.
+
+The following types are supported:
+
+- "`feat`": A new feature;
+- "`fix`": A bug fix;
+- "`refactor`": A code change that neither fixes a bug nor adds a feature;
+- "`chore`": Other changes that don't modify the code;
+
+Use `{type}!: {description}` as the commit message for breaking changes.
+
+Thanks to the "[@release-it/conventional-changelog](https://www.npmjs.com/package/@release-it/conventional-changelog)" plugin for "[release-it](https://www.npmjs.com/package/release-it)", the changelog will be automatically generated when releasing. Also, the version number will be automatically incremented based on the commit messages.
 
 ## GitHub Actions
 
