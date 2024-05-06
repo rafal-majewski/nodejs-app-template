@@ -2,7 +2,7 @@
 
 This is a template for a Node.js TypeScript app.
 
-The following following tools and conventions have been configured:
+The following tools and conventions have been configured:
 
 - "[Conventional Commits](https://www.conventionalcommits.org/)" for commit messages;
 - "[Docker](https://www.docker.com/)" for containerization;
