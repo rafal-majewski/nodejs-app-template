@@ -78,8 +78,8 @@
 		"suppressImplicitAnyIndexErrors": false,
 		"target": "es2022",
 		"traceResolution": false,
-		"typeRoots": [],
-		"types": [],
+		"typeRoots": ["./node_modules/@types"],
+		"types": ["node"],
 		"useDefineForClassFields": true,
 		"useUnknownInCatchVariables": true,
 		"verbatimModuleSyntax": true
