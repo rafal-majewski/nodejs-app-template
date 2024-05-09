@@ -4,7 +4,7 @@
 		"url": "https://github.com/Rafal-Majewski/nodejs-app-template/issues"
 	},
 	"dependencies": {
-		"dotenv": "16.3.1",
+		"dotenv": "16.4.5",
 		"envalid": "8.0.0"
 	},
 	"description": "Node.js app template",
