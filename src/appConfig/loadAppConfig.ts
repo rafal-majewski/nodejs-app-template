@@ -1,12 +1,10 @@
 import type {AppConfig} from "./AppConfig.ts";
-import type {DotEnv} from "./DotEnv.ts";
-import {dotEnvSchema} from "./dotEnvSchema.js";
-import * as Envalid from "envalid";
+import type {ReadonlyProcessEnv} from "./ReadonlyProcessEnv.js";
+import {transformValidatedProcessEnvIntoAppConfig} from "./transformValidatedProcessEnvIntoAppConfig.js";
+import {validateProcessEnv} from "./validateProcessEnv.js";
 
-export function loadAppConfig(dotEnv: DotEnv): AppConfig {
-	const validatedDotEnv = Envalid.cleanEnv(dotEnv, dotEnvSchema);
-
-	return {
-		helloMessage: validatedDotEnv.OPTIONAL_HELLO_MESSAGE,
-	};
+export function loadAppConfig(processEnv: ReadonlyProcessEnv): AppConfig {
+	const validatedProcessEnv = validateProcessEnv(processEnv);
+	console.log("validatedProcessEnv", validatedProcessEnv);
+	return transformValidatedProcessEnvIntoAppConfig(validatedProcessEnv);
 }

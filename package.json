@@ -4,7 +4,6 @@
 		"url": "https://github.com/Rafal-Majewski/nodejs-app-template/issues"
 	},
 	"dependencies": {
-		"dotenv": "16.4.5",
 		"envalid": "8.0.0"
 	},
 	"description": "Node.js app template",
@@ -38,8 +37,8 @@
 	"scripts": {
 		"compile": "tsc",
 		"compile:check": "tsc --noEmit",
-		"dev": "tsx ./src/main.ts",
-		"dev:watch": "nodemon --watch ./src --exec tsx ./src/main.ts",
+		"dev": "tsx --env-file='./.env' ./src/main.ts",
+		"dev:watch": "nodemon --watch ./src --exec tsx --env-file='./.env' ./src/main.ts",
 		"eslint:check": "eslint --max-warnings 0 .",
 		"eslint:fix": "eslint --max-warnings 0 --fix .",
 		"prettier:check": "prettier --check .",
