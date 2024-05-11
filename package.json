@@ -37,8 +37,8 @@
 	"scripts": {
 		"compile": "tsc",
 		"compile:check": "tsc --noEmit",
-		"dev": "tsx --env-file='./.env' ./src/main.ts",
-		"dev:watch": "nodemon --watch ./src --exec tsx --env-file='./.env' ./src/main.ts",
+		"dev": "node --import='tsx' --env-file='./.env' ./src/main.ts",
+		"dev:watch": "nodemon --watch ./src --exec node --import='tsx' --env-file='./.env' ./src/main.ts",
 		"eslint:check": "eslint --max-warnings 0 .",
 		"eslint:fix": "eslint --max-warnings 0 --fix .",
 		"prettier:check": "prettier --check .",
