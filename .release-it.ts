@@ -25,11 +25,6 @@ const releaseItConfig = {
 					},
 					{
 						hidden: false,
-						section: "Refactors",
-						type: "refactor",
-					},
-					{
-						hidden: false,
 						section: "Chores",
 						type: "chore",
 					},
