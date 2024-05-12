@@ -116,8 +116,7 @@ The following types are supported:
 
 - "`feat`": A new feature;
 - "`fix`": A bug fix;
-- "`refactor`": A code change that neither fixes a bug nor adds a feature;
-- "`chore`": Other changes that don't modify the code;
+- "`chore`": Other changes;
 
 Use `{type}!: {description}` as the commit message for breaking changes.
 
