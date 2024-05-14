@@ -18,7 +18,7 @@
 		"eslint-plugin-import": "2.29.1",
 		"eslint-plugin-sort-destructure-keys": "2.0.0",
 		"prettier": "3.2.5",
-		"release-it": "17.0.1",
+		"release-it": "17.2.1",
 		"testcontainers": "10.9.0",
 		"tsx": "4.9.3",
 		"typescript": "5.4.5",
