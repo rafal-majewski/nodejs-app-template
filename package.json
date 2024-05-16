@@ -20,7 +20,7 @@
 		"prettier": "3.2.5",
 		"release-it": "17.2.1",
 		"testcontainers": "10.9.0",
-		"tsx": "4.9.3",
+		"tsx": "4.10.3",
 		"typescript": "5.4.5",
 		"vitest": "1.6.0"
 	},
