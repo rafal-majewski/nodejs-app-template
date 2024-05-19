@@ -13,7 +13,6 @@
 		"@types/node": "20.12.12",
 		"@typescript-eslint/eslint-plugin": "7.9.0",
 		"@typescript-eslint/parser": "7.9.0",
-		"@vitest/coverage-v8": "1.6.0",
 		"eslint": "8.57.0",
 		"eslint-plugin-import": "2.29.1",
 		"eslint-plugin-sort-destructure-keys": "2.0.0",
@@ -21,8 +20,7 @@
 		"release-it": "17.2.1",
 		"testcontainers": "10.9.0",
 		"tsx": "4.9.3",
-		"typescript": "5.4.5",
-		"vitest": "1.6.0"
+		"typescript": "5.4.5"
 	},
 	"homepage": "https://github.com/Rafal-Majewski/nodejs-app-template#readme",
 	"license": "CC0-1.0",
@@ -43,8 +41,9 @@
 		"prettier:check": "prettier --check .",
 		"prettier:fix": "prettier --write .",
 		"release": "release-it --config='./.release-it.ts'",
-		"vitest:check": "vitest run --passWithNoTests --coverage",
-		"vitest:check:watch": "vitest --watch --passWithNoTests --coverage"
+		"test": "node --import='tsx' --test './**/*.test.ts'",
+		"test:experimental-coverage": "tsc && node --test --experimental-test-coverage --test-reporter='lcov' --test-reporter-destination='lcov.info' './dist/**/*.test.js'",
+		"test:watch": "node --import='tsx' --watch --test './**/*.test.ts'"
 	},
 	"type": "module",
 	"version": "1.7.1"

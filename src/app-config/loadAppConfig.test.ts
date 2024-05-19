@@ -1,16 +1,17 @@
 import type {ReadonlyProcessEnv} from "./ReadonlyProcessEnv.js";
 import {loadAppConfig} from "./loadAppConfig.js";
-import {describe, test, expect} from "vitest";
+import * as Assert from "node:assert";
+import * as Test from "node:test";
 
-describe("app-config", (): void => {
-	describe("loadAppConfig", (): void => {
-		test("Loads the app config from the given process environment", (): void => {
+await Test.describe("app-config", async (): Promise<void> => {
+	await Test.describe("loadAppConfig", async (): Promise<void> => {
+		await Test.it("Loads the app config from the given process environment", (): void => {
 			const provessEnv: ReadonlyProcessEnv = {
 				OPTIONAL_HELLO_MESSAGE: "Hello developer",
 			};
 
 			const appConfig = loadAppConfig(provessEnv);
-			expect(appConfig.helloMessage).toBe("Hello developer");
+			Assert.strictEqual(appConfig.helloMessage, "Hello developer");
 		});
 	});
 });
