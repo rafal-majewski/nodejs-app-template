@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  NODE_VERSION: 20.9.0
+  NODE_VERSION: 22.2.0
 
 jobs:
   build_docker_image:

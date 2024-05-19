@@ -1,12 +1,13 @@
 import {Hello} from "./Hello.js";
-import {describe, test, expect} from "vitest";
+import * as Assert from "node:assert";
+import * as Test from "node:test";
 
-describe("hello", (): void => {
-	describe("Hello", (): void => {
-		describe("getMessage", (): void => {
-			test('should return "Hello World"', (): void => {
+await Test.describe("hello", async (): Promise<void> => {
+	await Test.describe("Hello", async (): Promise<void> => {
+		await Test.describe("getMessage", async (): Promise<void> => {
+			await Test.it('should return "Hello World"', (): void => {
 				const hello = new Hello("Hello world");
-				expect(hello.getMessage()).toBe("Hello world");
+				Assert.strictEqual(hello.getMessage(), "Hello world");
 			});
 		});
 	});

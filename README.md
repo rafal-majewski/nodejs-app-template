@@ -21,8 +21,6 @@ The following tools and conventions have been configured:
 - "[Testcontainers](https://www.npmjs.com/package/testcontainers)" for testing with Docker containers;
 - "[tsx](https://www.npmjs.com/package/tsx)" for running TypeScript code;
 - "[TypeScript](https://www.npmjs.com/package/typescript)" for TypeScript support;
-- "[Vitest](https://www.npmjs.com/package/vitest)" for unit testing;
-  - "[@vitest/coverage-v8](https://www.npmjs.com/package/@vitest/coverage-v8)" for code coverage;
 
 ## Usage
 
@@ -65,18 +63,26 @@ Note: This will command will fail if the application has not been compiled (no "
 
 ### Test the application
 
-"[Vitest](https://www.npmjs.com/package/vitest)" is used to run and write the tests.
+Native [Node.js](https://nodejs.org/) test runner is used to run the tests.
+Native "node:assert" and "node:test" modules are used to write the tests.
 
 The tests can be found in the "`test`" directory.
 
 To run the unit tests:
 
 ```bash
-npm run vitest:check
+npm run test
 ```
 
-This will run the tests and also providing a tabular code coverage report.
-An HTML code coverage report will be also generated in the "`coverage-report`" directory.
+The coverage report can be generated in the "lcov" format by running:
+
+```bash
+npm run test:experimental-coverage
+```
+
+After running the command, the coverage report will be available in the "`lcov.info`" file.
+
+Note that the coverage report is experimental as it only works on compiled code.
 
 ### Run the linter
 

@@ -1,35 +1,25 @@
-import {convertSecondsToMiliseconds} from "./utils/convertSecondsToMiliseconds.js";
+import * as Test from "node:test";
 import * as Testcontainers from "testcontainers";
-import {describe, test} from "vitest";
-const dockerImageNodeVersion = "20.9.0";
-const timeoutSeconds = 100;
+const dockerImageNodeVersion = "22.2.0";
 
-describe("Docker image", (): void => {
-	test(
-		"builds",
-		async (): Promise<void> => {
-			await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
-				.withBuildArgs({
-					NODE_VERSION: dockerImageNodeVersion,
-				})
-				.build();
-		},
-		convertSecondsToMiliseconds(timeoutSeconds),
-	);
+await Test.describe("Docker image", async (): Promise<void> => {
+	await Test.it("builds", async (): Promise<void> => {
+		await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
+			.withBuildArgs({
+				NODE_VERSION: dockerImageNodeVersion,
+			})
+			.build();
+	});
 });
 
-describe("Docker container", (): void => {
-	test(
-		"starts",
-		async (): Promise<void> => {
-			const container = await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
-				.withBuildArgs({
-					NODE_VERSION: dockerImageNodeVersion,
-				})
-				.build();
+await Test.describe("Docker container", async (): Promise<void> => {
+	await Test.it("starts", async (): Promise<void> => {
+		const container = await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
+			.withBuildArgs({
+				NODE_VERSION: dockerImageNodeVersion,
+			})
+			.build();
 
-			await container.start();
-		},
-		convertSecondsToMiliseconds(timeoutSeconds),
-	);
+		await container.start();
+	});
 });

@@ -3,6 +3,7 @@
 .vscode/
 /coverage-report/
 /dist/
+/lcov.info
 node_modules/
 !.env.example
 !.env.test
