@@ -66,7 +66,7 @@ Note: This will command will fail if the application has not been compiled (no "
 Native [Node.js](https://nodejs.org/) test runner is used to run the tests.
 Native "node:assert" and "node:test" modules are used to write the tests.
 
-The tests can be found in the "`test`" directory.
+Source code-related tests are kept alongside the source code they test in the "`src`" directory. Other tests and test utilities are kept in the "`test`" directory.
 
 To run the unit tests:
 
