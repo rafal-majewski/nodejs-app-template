@@ -1,5 +1,6 @@
+ARG ALPINE_VERSION
 ARG NODE_VERSION
-FROM node:${NODE_VERSION}-alpine3.19 AS compiler
+FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS compiler
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci

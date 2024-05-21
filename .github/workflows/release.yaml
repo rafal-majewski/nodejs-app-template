@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 
 env:
+  ALPINE_VERSION: 3.19
   NODE_VERSION: 22.2.0
 
 jobs:
@@ -29,7 +30,7 @@ jobs:
           rm -rf ./${{github.event.repository.owner.login}}-${{github.event.repository.name}}-*/
       - name: Build a Docker image
         run: |
-          docker build --tag=${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.release.outputs.release_version}} --file=Dockerfile --build-arg="NODE_VERSION=${{env.NODE_VERSION}}" .
+          docker build --tag=${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.release.outputs.release_version}} --file=Dockerfile --build-arg="ALPINE_VERSION=${{env.ALPINE_VERSION}}" --build-arg="NODE_VERSION=${{env.NODE_VERSION}}" .
       - name: Upload the Docker image as an artifact
         uses: ishworkh/container-image-artifact-upload@v1.1.1
         with:
