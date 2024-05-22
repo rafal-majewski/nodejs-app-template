@@ -1116,7 +1116,7 @@ const eslintConfig = [
 		},
 	},
 	{
-		ignores: ["**/.git/**", "**/.vscode/**", "**/node_modules/**", "coverage-report/**", "dist/**"],
+		ignores: ["**/.git/**", "**/node_modules/**", "coverage-report/**", "dist/**"],
 	},
 ];
 

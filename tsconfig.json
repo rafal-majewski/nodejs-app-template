@@ -84,6 +84,6 @@
 		"useUnknownInCatchVariables": true,
 		"verbatimModuleSyntax": true
 	},
-	"exclude": ["**/.git/**", "**/.vscode/**", "**/node_modules/**", "coverage-report/**", "dist/**"],
+	"exclude": ["**/.git/**", "**/node_modules/**", "coverage-report/**", "dist/**"],
 	"include": ["**/*", "**/.*"]
 }
