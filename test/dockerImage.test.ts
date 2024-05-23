@@ -1,14 +1,13 @@
+import {testConfig} from "./instances/testConfig.js";
 import * as Test from "node:test";
 import * as Testcontainers from "testcontainers";
-const dockerImageAlpineVersion = "3.19";
-const dockerImageNodeVersion = "22.2.0";
 
 await Test.describe("Docker image", async (): Promise<void> => {
 	await Test.it("builds", async (): Promise<void> => {
 		await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
 			.withBuildArgs({
-				ALPINE_VERSION: dockerImageAlpineVersion,
-				NODE_VERSION: dockerImageNodeVersion,
+				ALPINE_VERSION: testConfig.alpineVersion,
+				NODE_VERSION: testConfig.nodejsVersion,
 			})
 			.build();
 	});
@@ -18,8 +17,8 @@ await Test.describe("Docker container", async (): Promise<void> => {
 	await Test.it("starts", async (): Promise<void> => {
 		const container = await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
 			.withBuildArgs({
-				ALPINE_VERSION: dockerImageAlpineVersion,
-				NODE_VERSION: dockerImageNodeVersion,
+				ALPINE_VERSION: testConfig.alpineVersion,
+				NODE_VERSION: testConfig.nodejsVersion,
 			})
 			.build();
 
