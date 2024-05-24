@@ -6,6 +6,6 @@ export function transformValidatedProcessEnvIntoTestConfig(
 ): TestConfig {
 	return {
 		alpineVersion: validatedProcessEnv.ALPINE_VERSION,
-		nodejsVersion: validatedProcessEnv.NODE_VERSION,
+		nodejsVersion: validatedProcessEnv.NODEJS_VERSION,
 	};
 }

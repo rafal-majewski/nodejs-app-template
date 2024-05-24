@@ -7,7 +7,7 @@ await Test.describe("Docker image", async (): Promise<void> => {
 		await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
 			.withBuildArgs({
 				ALPINE_VERSION: testConfig.alpineVersion,
-				NODE_VERSION: testConfig.nodejsVersion,
+				NODEJS_VERSION: testConfig.nodejsVersion,
 			})
 			.build();
 	});
@@ -18,7 +18,7 @@ await Test.describe("Docker container", async (): Promise<void> => {
 		const container = await new Testcontainers.GenericContainerBuilder(".", "Dockerfile")
 			.withBuildArgs({
 				ALPINE_VERSION: testConfig.alpineVersion,
-				NODE_VERSION: testConfig.nodejsVersion,
+				NODEJS_VERSION: testConfig.nodejsVersion,
 			})
 			.build();
 
