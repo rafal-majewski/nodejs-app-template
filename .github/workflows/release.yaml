@@ -5,7 +5,7 @@ on:
 
 env:
   ALPINE_VERSION: 3.19
-  NODE_VERSION: 22.2.0
+  NODEJS_VERSION: 22.2.0
 
 jobs:
   build_docker_image:
@@ -30,7 +30,7 @@ jobs:
           rm -rf ./${{github.event.repository.owner.login}}-${{github.event.repository.name}}-*/
       - name: Build a Docker image
         run: |
-          docker build --tag=${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.release.outputs.release_version}} --file=Dockerfile --build-arg="ALPINE_VERSION=${{env.ALPINE_VERSION}}" --build-arg="NODE_VERSION=${{env.NODE_VERSION}}" .
+          docker build --tag=${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.release.outputs.release_version}} --file=Dockerfile --build-arg="ALPINE_VERSION=${{env.ALPINE_VERSION}}" --build-arg="NODEJS_VERSION=${{env.NODEJS_VERSION}}" .
       - name: Upload the Docker image as an artifact
         uses: ishworkh/container-image-artifact-upload@v1.1.1
         with:
@@ -60,7 +60,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{env.NODE_VERSION}}
+          node-version: ${{env.NODEJS_VERSION}}
           cache: "npm"
       - name: Install dependencies
         run: |
@@ -132,7 +132,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{env.NODE_VERSION}}
+          node-version: ${{env.NODEJS_VERSION}}
           cache: "npm"
       - name: git config
         run: |

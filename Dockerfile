@@ -1,12 +1,12 @@
 ARG ALPINE_VERSION
-ARG NODE_VERSION
-FROM node:${NODE_VERSION}-alpine${ALPINE_VERSION} AS compiler
+ARG NODEJS_VERSION
+FROM node:${NODEJS_VERSION}-alpine${ALPINE_VERSION} AS compiler
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 RUN find ./src -name "*.test.ts" -type f -delete && npm run compile
-FROM node:${NODE_VERSION}-alpine3.19 AS runner
+FROM node:${NODEJS_VERSION}-alpine3.19 AS runner
 RUN adduser --disabled-password --gecos '' appuser
 WORKDIR /home/appuser
 COPY --from=compiler --chown=appuser:appuser /app/package.json /app/package-lock.json ./
