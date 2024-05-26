@@ -1,0 +1,31 @@
+name: Fix Dependabot pull request titles
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  fix_dependabot_pull_request_title:
+    # if: "${{github.actor == 'dependabot[bot]'}}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Get current PR title
+        id: remember_pull_request_title
+        run: |
+          echo "pull_request_title=${{github.event.pull_request.title}}" >> $GITHUB_OUTPUT
+      - name: Fix pull request title
+        env:
+          GITHUB_TOKEN: "${{secrets.GITHUB_TOKEN}}"
+        if: "${{startsWith(steps.remember_pull_request_title.outputs.pull_request_title, 'chore: ')}}"
+        run: |
+          gh pr edit "${{github.event.pull_request.number}}" --title "$(echo "${{steps.remember_pull_request_title.outputs.pull_request_title}}" | sed 's/^chore: //')"
+
+      # if: startsWith(steps.remember_pull_request_title.outputs.pull_request_title, 'chore: ')
+      # run: |
+      #   new_title=$(echo "${{ steps.pr_title.outputs.title }}" | sed 's/^chore: Bump/Bump/')
+      #   echo "New PR title: $new_title"
+      #   gh pr edit ${{ github.event.pull_request.number }} --title "$new_title"
+      # env:
+      #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
