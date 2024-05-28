@@ -9,6 +9,8 @@ jobs:
     if: "${{github.actor == 'dependabot[bot]'}}"
     name: "Fix Dependabot pull request title"
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: "write"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
