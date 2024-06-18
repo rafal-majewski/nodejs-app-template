@@ -42,7 +42,7 @@
 		"prettier:fix": "prettier --write .",
 		"release": "release-it --config='./.release-it.ts'",
 		"test": "node --import='tsx' --test './**/*.test.ts'",
-		"test:experimental-coverage": "tsc && node --test --experimental-test-coverage --test-reporter='lcov' --test-reporter-destination='lcov.info' './dist/**/*.test.js'",
+		"test:coverage": "node --import='tsx' --test --experimental-test-coverage --test-reporter='lcov' --test-reporter-destination='lcov.info' './**/*.test.ts'",
 		"test:watch": "node --import='tsx' --watch --test './**/*.test.ts'"
 	},
 	"type": "module",
