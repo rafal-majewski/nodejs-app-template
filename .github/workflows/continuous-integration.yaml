@@ -6,7 +6,7 @@ on:
 
 env:
   ALPINE_VERSION: 3.19
-  NODEJS_VERSION: 22.2.0
+  NODEJS_VERSION: 22.3.0
 
 jobs:
   build_docker_image:
