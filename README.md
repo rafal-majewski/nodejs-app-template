@@ -5,6 +5,7 @@ This is a template for a Node.js TypeScript app.
 The following tools and conventions have been configured:
 
 - "[Conventional Commits](https://www.conventionalcommits.org/)" for commit messages;
+- "[Dev Containers](https://containers.dev/)" for development Docker containers;
 - "[Docker](https://www.docker.com/)" for containerization;
 - "[ESLint](https://www.npmjs.com/package/eslint)" for linting;
   - "[eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)" for linting import/export;
