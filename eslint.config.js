@@ -4,6 +4,8 @@ import * as TypescriptEslintParser from "@typescript-eslint/parser";
 // @ts-expect-error - No types available.
 import importEslintPlugin from "eslint-plugin-import";
 // @ts-expect-error - No types available.
+import perfectionistEslintPlugin from "eslint-plugin-perfectionist";
+// @ts-expect-error - No types available.
 import sortDestructureKeysEslintPlugin from "eslint-plugin-sort-destructure-keys";
 
 const eslintConfig = [
@@ -43,6 +45,8 @@ const eslintConfig = [
 			"@typescript-eslint": typescriptEslintPlugin,
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 			import: importEslintPlugin,
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+			perfectionist: perfectionistEslintPlugin,
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 			"sort-destructure-keys": sortDestructureKeysEslintPlugin,
 		},
@@ -1008,6 +1012,135 @@ const eslintConfig = [
 			],
 			"one-var": ["warn", "never"],
 			"operator-assignment": ["warn", "always"],
+			"perfectionist/sort-array-includes": [
+				"warn",
+				{
+					"ignore-case": false,
+					order: "asc",
+					"spread-last": true,
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-classes": [
+				"warn",
+				{
+					"custom-groups": {},
+					groups: [],
+					"ignore-case": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-enums": [
+				"warn",
+				{
+					"ignore-case": false,
+					order: "asc",
+					"partition-by-comment": false,
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-exports": [
+				"warn",
+				{
+					"ignore-case": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-imports": [
+				"warn",
+				{
+					"custom-groups": {},
+					groups: [],
+					"ignore-case": false,
+					"internal-pattern": [],
+					"newlines-between": "ignore",
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-interfaces": [
+				"warn",
+				{
+					"custom-groups": {},
+					groups: [],
+					"ignore-case": false,
+					"ignore-pattern": [],
+					"optionality-order": "ignore",
+					order: "asc",
+					"partition-by-new-line": false,
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-intersection-types": [
+				"warn",
+				{
+					"ignore-case": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-maps": [
+				"warn",
+				{
+					"ignore-case": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-named-exports": [
+				"warn",
+				{
+					"group-kind": "mixed",
+					"ignore-case": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-named-imports": [
+				"warn",
+				{
+					"group-kind": "mixed",
+					"ignore-alias": false,
+					"ignore-case": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-object-types": [
+				"warn",
+				{
+					"custom-groups": {},
+					groups: [],
+					"ignore-case": false,
+					order: "asc",
+					"partition-by-new-line": false,
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-objects": [
+				"warn",
+				{
+					"custom-groups": {},
+					groups: [],
+					"ignore-case": false,
+					"ignore-pattern": [],
+					order: "asc",
+					"partition-by-comment": false,
+					"partition-by-new-line": false,
+					type: "natural",
+				},
+			],
+			"perfectionist/sort-union-types": [
+				"warn",
+				{
+					"ignore-case": false,
+					"nullable-last": false,
+					order: "asc",
+					type: "natural",
+				},
+			],
 			"prefer-arrow-callback": [
 				"warn",
 				{
