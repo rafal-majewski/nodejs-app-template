@@ -9,7 +9,7 @@ jobs:
     name: "Enable auto-merge on Dependabot pull requests"
     permissions:
       pull-requests: "write"
-      contents: "read"
+      contents: "write"
     steps:
       - name: "Enable auto-merge"
         run: 'gh pr merge --auto --merge "$PULL_REQUEST_URL"'
