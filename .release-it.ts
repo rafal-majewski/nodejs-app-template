@@ -1,6 +1,7 @@
 const releaseItConfig = {
 	git: {
 		commitArgs: ["-S"],
+		tagArgs: ["-S"],
 	},
 	github: {
 		release: true,
