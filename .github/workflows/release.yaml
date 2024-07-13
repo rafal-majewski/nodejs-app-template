@@ -144,11 +144,11 @@ jobs:
           GPG_PASSPHRASE: ${{secrets.RELEASE_IT_GITHUB_ACTION_GPG_PASSPHRASE}}
         run: |
           mkdir -p ~/.gnupg
-          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          echo "$RELEASE_IT_GITHUB_ACTION_GPG_PRIVATE_KEY" | gpg --batch --import
           echo "default-key $(gpg --list-secret-keys --keyid-format LONG | grep '^sec' | awk '{print $2}' | cut -d'/' -f2)" > ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
           git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep '^sec' | awk '{print $2}' | cut -d'/' -f2)
-          gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --list-keys
+          gpg --batch --yes --passphrase "$RELEASE_IT_GITHUB_ACTION_GPG_PASSPHRASE" --pinentry-mode loopback --list-keys
       - name: Install dependencies
         run: |
           npm ci
