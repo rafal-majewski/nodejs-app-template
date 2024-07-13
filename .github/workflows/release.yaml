@@ -146,11 +146,15 @@ jobs:
           mkdir -p ~/.gnupg
           chmod 700 ~/.gnupg
           echo "$GPG_PRIVATE_KEY" | gpg --batch --import
-          gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --edit-key $(gpg --list-keys --with-colons | grep pub | cut -d: -f5) trust quit
-          git config --global user.signingkey $(gpg --list-secret-keys --keyid-format LONG | grep '^sec' | awk '{print $2}' | cut -d'/' -f2)
           echo "default-key $(gpg --list-secret-keys --keyid-format LONG | grep '^sec' | awk '{print $2}' | cut -d'/' -f2)" > ~/.gnupg/gpg.conf
           echo "use-agent" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          echo "$GPG_PASSPHRASE" > ~/.gnupg/passphrase.txt
+          gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --edit-key $(gpg --list-keys --with-colons | grep pub | cut -d: -f5) trust quit <<-EOF
+            trust
+            5
+            quit
+          EOF
           gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --list-keys
       - name: Install dependencies
         run: |
