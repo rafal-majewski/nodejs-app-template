@@ -150,12 +150,8 @@ jobs:
           echo "use-agent" >> ~/.gnupg/gpg.conf
           echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
           echo "$GPG_PASSPHRASE" > ~/.gnupg/passphrase.txt
-          gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --edit-key $(gpg --list-keys --with-colons | grep pub | cut -d: -f5) trust quit <<-EOF
-            trust
-            5
-            quit
-          EOF
-          gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --pinentry-mode loopback --list-keys
+          echo "5" > ~/.gnupg/trustlevel.txt
+          gpg --batch --yes --passphrase "$GPG_PASSPHRASE" --import-ownertrust <(echo "$(gpg --list-keys --with-colons | grep pub | cut -d: -f5):6:")
       - name: Install dependencies
         run: |
           npm ci
