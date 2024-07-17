@@ -1,13 +1,10 @@
 name: Continuous integration
-
 on:
   push:
   pull_request:
-
 env:
   ALPINE_VERSION: 3.19
   NODEJS_VERSION: 22.3.0
-
 jobs:
   build_docker_image:
     name: Build a Docker image

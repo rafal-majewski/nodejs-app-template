@@ -1,9 +1,7 @@
 name: Fix Dependabot pull request titles
-
 on:
   pull_request:
     types: [opened, edited, synchronize]
-
 jobs:
   fix_dependabot_pull_request_title:
     if: "${{github.actor == 'dependabot[bot]'}}"
