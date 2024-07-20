@@ -1,6 +1,3 @@
-name: Release
-on:
-  workflow_dispatch:
 env:
   ALPINE_VERSION: 3.19
   NODEJS_VERSION: 22.3.0
@@ -8,6 +5,8 @@ jobs:
   build_docker_image:
     name: Build a Docker image
     needs: [release]
+    outputs:
+      release_version: ${{needs.release.outputs.release_version}}
     runs-on: ubuntu-latest
     steps:
       - name: Download release
@@ -32,11 +31,11 @@ jobs:
         uses: ishworkh/container-image-artifact-upload@v1.1.1
         with:
           image: ${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.release.outputs.release_version}}
-    outputs:
-      release_version: ${{needs.release.outputs.release_version}}
   compile:
     name: Compile
     needs: [release]
+    outputs:
+      release_version: ${{needs.release.outputs.release_version}}
     runs-on: ubuntu-latest
     steps:
       - name: Download release
@@ -57,8 +56,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{env.NODEJS_VERSION}}
           cache: "npm"
+          node-version: ${{env.NODEJS_VERSION}}
       - name: Install dependencies
         run: |
           npm ci
@@ -70,8 +69,6 @@ jobs:
         with:
           name: dist
           path: dist
-    outputs:
-      release_version: ${{needs.release.outputs.release_version}}
   publish_to_docker_registry:
     name: Publish to Docker registry
     needs: [build_docker_image]
@@ -84,9 +81,9 @@ jobs:
       - name: Login to Docker registry
         uses: docker/login-action@v3
         with:
-          username: ${{secrets.DOCKER_REGISTRY_USERNAME}}
           password: ${{secrets.DOCKER_REGISTRY_PASSWORD}}
           registry: ${{vars.DOCKER_REGISTRY_HOST}}
+          username: ${{secrets.DOCKER_REGISTRY_USERNAME}}
       - name: Push the Docker image to the registry
         run: |
           docker push ${{vars.DOCKER_REGISTRY_HOST}}/${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.build_docker_image.outputs.release_version}}
@@ -119,8 +116,10 @@ jobs:
         run: |
           npm publish --registry=${{vars.NPM_REGISTRY_URL}} --//$(echo -n ${{vars.NPM_REGISTRY_URL}} | sed 's/^[^\/]*\/\///'):_authToken=${{secrets.NPM_REGISTRY_ACCESS_TOKEN}}
   release:
-    runs-on: ubuntu-latest
     name: Release
+    outputs:
+      release_version: ${{steps.remember_release_version.outputs.release_version}}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -129,8 +128,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{env.NODEJS_VERSION}}
           cache: "npm"
+          node-version: ${{env.NODEJS_VERSION}}
       - name: Configure Git
         run: |
           git config user.name "${GITHUB_ACTOR}"
@@ -143,9 +142,10 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           npm run release -- --verbose --ci
-      - name: Remember release version
-        id: remember_release_version
+      - id: remember_release_version
+        name: Remember release version
         run: |
           echo "release_version=$(node -p 'require("./package.json").version')" >> $GITHUB_OUTPUT
-    outputs:
-      release_version: ${{steps.remember_release_version.outputs.release_version}}
+name: Release
+on:
+  workflow_dispatch:
