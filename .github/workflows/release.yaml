@@ -151,6 +151,7 @@ jobs:
         env:
           GITHUB_TOKEN: "${{secrets.GITHUB_TOKEN}}"
         run: |
+          export GPG_TTY=$(tty)
           npm run release -- --verbose --ci
       - id: "remember_release_version"
         name: "Remember release version"
