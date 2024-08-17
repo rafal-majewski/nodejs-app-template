@@ -1,11 +1,7 @@
 import stylisticEslintPlugin from "@stylistic/eslint-plugin";
 import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
 import * as TypescriptEslintParser from "@typescript-eslint/parser";
-// @ts-expect-error - No types available.
-import importEslintPlugin from "eslint-plugin-import";
 import perfectionistEslintPlugin from "eslint-plugin-perfectionist";
-// @ts-expect-error - No types available.
-import sortDestructureKeysEslintPlugin from "eslint-plugin-sort-destructure-keys";
 
 const eslintConfig = [
 	{
@@ -31,23 +27,12 @@ const eslintConfig = [
 				tsconfigRootDir: ".",
 			},
 		},
-		settings: {
-			/* Required because of https://github.com/import-js/eslint-plugin-import/issues/2556. */
-			"import/parsers": {
-				"@typescript-eslint/parser": [".ts", ".js", ".cjs", ".mjs"],
-			},
-		},
 	},
 	{
 		plugins: {
 			"@stylistic": stylisticEslintPlugin,
 			"@typescript-eslint": typescriptEslintPlugin,
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-			import: importEslintPlugin,
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 			perfectionist: perfectionistEslintPlugin,
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-			"sort-destructure-keys": sortDestructureKeysEslintPlugin,
 		},
 		rules: {
 			"@stylistic/lines-between-class-members": [
@@ -162,13 +147,6 @@ const eslintConfig = [
 				},
 			],
 			"@typescript-eslint/ban-tslint-comment": ["warn"],
-			"@typescript-eslint/ban-types": [
-				"warn",
-				{
-					extendDefaults: true,
-					types: {},
-				},
-			],
 			"@typescript-eslint/class-literal-property-style": ["warn", "fields"],
 			"@typescript-eslint/class-methods-use-this": [
 				"warn",
@@ -319,6 +297,13 @@ const eslintConfig = [
 					allowSingleExtends: false,
 				},
 			],
+			"@typescript-eslint/no-empty-object-type": [
+				"warn",
+				{
+					allowInterfaces: "never",
+					allowObjectTypes: "never",
+				},
+			],
 			"@typescript-eslint/no-explicit-any": [
 				"warn",
 				{
@@ -413,13 +398,6 @@ const eslintConfig = [
 				},
 			],
 			"@typescript-eslint/no-this-alias": ["warn"],
-			"@typescript-eslint/no-throw-literal": [
-				"warn",
-				{
-					allowThrowingAny: false,
-					allowThrowingUnknown: false,
-				},
-			],
 			"@typescript-eslint/no-unnecessary-boolean-literal-compare": [
 				"warn",
 				{
@@ -446,6 +424,7 @@ const eslintConfig = [
 			"@typescript-eslint/no-unsafe-call": ["warn"],
 			"@typescript-eslint/no-unsafe-declaration-merging": ["warn"],
 			"@typescript-eslint/no-unsafe-enum-comparison": ["warn"],
+			"@typescript-eslint/no-unsafe-function-type": ["warn"],
 			"@typescript-eslint/no-unsafe-member-access": ["warn"],
 			"@typescript-eslint/no-unsafe-return": ["warn"],
 			"@typescript-eslint/no-unsafe-unary-minus": ["warn"],
@@ -482,7 +461,15 @@ const eslintConfig = [
 			"@typescript-eslint/no-useless-constructor": ["warn"],
 			"@typescript-eslint/no-useless-empty-export": ["warn"],
 			"@typescript-eslint/no-var-requires": ["warn"],
+			"@typescript-eslint/no-wrapper-object-types": ["warn"],
 			"@typescript-eslint/non-nullable-type-assertion-style": ["warn"],
+			"@typescript-eslint/only-throw-error": [
+				"warn",
+				{
+					allowThrowingAny: false,
+					allowThrowingUnknown: false,
+				},
+			],
 			"@typescript-eslint/parameter-properties": [
 				"warn",
 				{
@@ -683,118 +670,6 @@ const eslintConfig = [
 			],
 			"getter-return": ["warn"],
 			"grouped-accessor-pairs": ["warn", "getBeforeSet"],
-			"import/export": ["warn"],
-			"import/exports-last": ["warn"],
-			"import/first": ["warn"],
-			"import/max-dependencies": ["off"],
-			"import/named": ["warn"],
-			"import/namespace": [
-				"warn",
-				{
-					allowComputed: false,
-				},
-			],
-			"import/no-absolute-path": [
-				"warn",
-				{
-					commonjs: true,
-					esmodule: true,
-				},
-			],
-			"import/no-anonymous-default-export": [
-				"warn",
-				{
-					allowAnonymousClass: false,
-					allowAnonymousFunction: false,
-					allowArray: false,
-					allowArrowFunction: false,
-					allowCallExpression: false,
-					allowLiteral: false,
-					allowNew: false,
-					allowObject: false,
-				},
-			],
-			"import/no-commonjs": [
-				"warn",
-				{
-					allowConditionalRequire: false,
-					allowPrimitiveModules: false,
-					allowRequire: false,
-				},
-			],
-			"import/no-cycle": [
-				"warn",
-				{
-					allowUnsafeDynamicCyclicDependency: false,
-					ignoreExternal: false,
-					maxDepth: Infinity,
-				},
-			],
-			"import/no-default-export": ["warn"],
-			"import/no-deprecated": ["warn"],
-			"import/no-duplicates": [
-				"warn",
-				{
-					considerQueryString: true,
-					"prefer-inline": true,
-				},
-			],
-			"import/no-dynamic-require": ["warn"],
-			"import/no-empty-named-blocks": ["warn"],
-			"import/no-extraneous-dependencies": [
-				"error",
-				{
-					bundledDependencies: [],
-					devDependencies: [
-						"./**/*.test.ts",
-						"./eslint.config.js",
-						"./prettier.config.js",
-						"./release-it.js",
-					],
-					optionalDependencies: [],
-					peerDependencies: [],
-				},
-			],
-			"import/no-import-module-exports": [
-				"warn",
-				{
-					exceptions: [],
-				},
-			],
-			"import/no-mutable-exports": ["warn"],
-			"import/no-named-as-default": ["warn"],
-			"import/no-named-default": ["warn"],
-			"import/no-relative-parent-imports": ["warn"],
-			"import/no-self-import": ["warn"],
-			"import/no-unassigned-import": [
-				"warn",
-				{
-					allow: [],
-				},
-			],
-			"import/no-useless-path-segments": [
-				"warn",
-				{
-					commonjs: true,
-					noUselessIndex: true,
-				},
-			],
-			"import/order": [
-				"warn",
-				{
-					alphabetize: {
-						caseInsensitive: false,
-						order: "asc",
-						orderImportKind: "asc",
-					},
-					distinctGroup: false,
-					groups: [],
-					"newlines-between": "never",
-					pathGroups: [],
-					pathGroupsExcludedImportTypes: [],
-					warnOnUnassignedImports: true,
-				},
-			],
 			"logical-assignment-operators": [
 				"warn",
 				"always",
@@ -1125,7 +1000,7 @@ const eslintConfig = [
 				"warn",
 				{
 					customGroups: {},
-					customIgnore: [],
+					destructureOnly: false,
 					groups: [],
 					ignoreCase: false,
 					ignorePattern: [],
@@ -1211,13 +1086,6 @@ const eslintConfig = [
 			],
 			"require-unicode-regexp": ["warn"],
 			"require-yield": ["warn"],
-			"sort-destructure-keys/sort-destructure-keys": [
-				"warn",
-				{
-					caseSensitive: true,
-				},
-			],
-			// eslint-plugin-import will handle this.
 			"sort-imports": [
 				"warn",
 				{
