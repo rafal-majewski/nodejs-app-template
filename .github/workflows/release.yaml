@@ -121,6 +121,8 @@ jobs:
     name: "Release"
     outputs:
       release_version: "${{steps.remember_release_version.outputs.release_version}}"
+    permissions:
+      contents: "write"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
