@@ -40,9 +40,7 @@
 		"moduleResolution": "Node16",
 		"moduleSuffixes": [""],
 		"newLine": "lf",
-		"noEmit": false,
-		"noEmitHelpers": false,
-		"noEmitOnError": true,
+		"noEmit": true,
 		"noFallthroughCasesInSwitch": false,
 		"noImplicitAny": true,
 		"noImplicitOverride": true,
@@ -57,7 +55,6 @@
 		"noUncheckedSideEffectImports": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"outDir": "./dist",
 		"paths": {},
 		"plugins": [],
 		"preserveConstEnums": true,
@@ -86,7 +83,7 @@
 		"useUnknownInCatchVariables": true,
 		"verbatimModuleSyntax": true
 	},
-	"exclude": ["**/.git/**", "**/node_modules/**", "coverage-report/**", "dist/**"],
+	"exclude": ["**/.git/**", "**/node_modules/**"],
 	"include": [
 		"**/*",
 		"**/.*",
