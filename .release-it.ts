@@ -2,6 +2,7 @@ const releaseItConfig = {
 	git: {
 		commitArgs: [],
 		pushArgs: ["--force"],
+		tagArgs: ["--force"],
 	},
 	github: {
 		release: true,
