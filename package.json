@@ -32,7 +32,7 @@
 		"url": "git+https://github.com/Rafal-Majewski/nodejs-app-template.git"
 	},
 	"scripts": {
-		"typescript:check": "tsc --noEmit",
+		"typescript:check": "tsc",
 		"start": "node --import='tsx' --env-file='./.env' ./src/main.ts",
 		"start:watch": "node --import='tsx' --watch-path='.' --env-file='./.env' ./src/main.ts",
 		"eslint:check": "eslint --max-warnings 0 .",
