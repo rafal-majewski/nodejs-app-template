@@ -33,8 +33,10 @@
 	},
 	"scripts": {
 		"typescript:check": "tsc",
-		"start": "node --import='tsx' --env-file='./.env' ./src/main.ts",
-		"start:watch": "node --import='tsx' --watch-path='.' --env-file='./.env' ./src/main.ts",
+		"dev": "node --import='tsx' --env-file='./.env' ./src/main.ts",
+		"dev:watch": "node --import='tsx' --watch-path='.' --env-file='./.env' ./src/main.ts",
+		"start": "node --import='tsx' ./src/main.ts",
+		"start:watch": "node --import='tsx' --watch-path='.' ./src/main.ts",
 		"eslint:check": "eslint --max-warnings 0 .",
 		"eslint:fix": "eslint --max-warnings 0 --fix .",
 		"prettier:check": "prettier --check .",
