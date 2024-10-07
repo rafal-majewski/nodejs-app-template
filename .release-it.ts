@@ -1,11 +1,14 @@
 const releaseItConfig = {
 	git: {
 		commitArgs: [],
-		pushArgs: ["--force"],
-		tagArgs: ["--force"],
+		pushArgs: [],
+		tagArgs: [],
 	},
 	github: {
 		release: true,
+	},
+	hooks: {
+		"before:git:bump": "git switch -c release/${version}",
 	},
 	npm: {
 		publish: false,

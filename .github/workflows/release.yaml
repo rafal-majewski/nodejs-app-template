@@ -80,6 +80,7 @@ jobs:
       release_version: "${{steps.remember_release_version.outputs.release_version}}"
     permissions:
       contents: "write"
+      pull-requests: "write"
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
@@ -98,7 +99,7 @@ jobs:
       - name: "Install dependencies"
         run: |
           npm ci
-      - name: "Release"
+      - name: "Release to a new branch"
         env:
           GITHUB_TOKEN: "${{secrets.GITHUB_TOKEN}}"
         run: |
@@ -107,6 +108,8 @@ jobs:
         name: "Remember release version"
         run: |
           echo "release_version=$(node -p 'require("./package.json").version')" >> $GITHUB_OUTPUT
+      - name: "Submit a pull request from the release branch to the main branch"
+        run: gh pr create --base main --head 'release/${{steps.remember_release_version.outputs.release_version}}' --title 'Release "${{steps.remember_release_version.outputs.release_version}}"'
 name: "Release"
 on:
   workflow_dispatch:
