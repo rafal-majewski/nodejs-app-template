@@ -46,5 +46,5 @@
 		"test:watch": "node --import='tsx' --watch --test --experimental-test-coverage --test-reporter='lcov' --test-reporter-destination='./lcov.info' './**/*.test.ts'"
 	},
 	"type": "module",
-	"version": "1.7.5"
+	"version": "1.7.6"
 }
