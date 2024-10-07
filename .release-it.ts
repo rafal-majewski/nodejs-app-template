@@ -1,9 +1,8 @@
 const releaseItConfig = {
 	git: {
-		commitArgs: [],
+		commitArgs: ["--no-git.requireUpstream"],
 		commitMessage: "release: ${version}",
 		pushArgs: [],
-		requireUpstream: false,
 		tagArgs: [],
 	},
 	github: {
