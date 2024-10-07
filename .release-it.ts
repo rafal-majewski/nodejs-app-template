@@ -12,7 +12,7 @@ const releaseItConfig = {
 	hooks: {
 		"after:github:release":
 			"gh pr create --base 'main' --head 'release/${version}' --title 'Release \"${version}\"' --body ''",
-		"after:init": "git switch -c 'release/${version}'",
+		"before:@release-it/conventional-changelog:bump": "git switch -c 'release/${version}'",
 	},
 	npm: {
 		publish: false,
