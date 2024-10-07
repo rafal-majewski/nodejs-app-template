@@ -11,65 +11,61 @@ const releaseItConfig = {
 	},
 	hooks: {
 		"after:@release-it/conventional-changelog:bump":
-			"echo 'after:@release-it/conventional-changelog:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:@release-it/conventional-changelog:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:@release-it/conventional-changelog:init":
-			"echo 'after:@release-it/conventional-changelog:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:@release-it/conventional-changelog:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:@release-it/conventional-changelog:release":
-			"echo 'after:@release-it/conventional-changelog:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
-		"after:bump":
-			"echo 'after:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:@release-it/conventional-changelog:release' && echo 'version: ${version}, branchName: ${branchName}'",
+		"after:bump": "echo 'after:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:git:bump":
-			"echo 'after:git:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:git:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:git:init":
-			"echo 'after:git:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:git:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:git:release":
-			"echo 'after:git:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:git:release' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:github:bump":
-			"echo 'after:github:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:github:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:github:init":
-			"echo 'after:github:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:github:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:github:release":
-			"echo 'after:github:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
-		"after:init":
-			"echo 'after:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:github:release' && echo 'version: ${version}, branchName: ${branchName}'",
+		"after:init": "echo 'after:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:release":
-			"echo 'after:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:release' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:version:bump":
-			"echo 'after:version:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:version:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:version:init":
-			"echo 'after:version:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:version:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"after:version:release":
-			"echo 'after:version:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'after:version:release' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:@release-it/conventional-changelog:bump":
-			"echo 'before:@release-it/conventional-changelog:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:@release-it/conventional-changelog:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:@release-it/conventional-changelog:init":
-			"echo 'before:@release-it/conventional-changelog:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:@release-it/conventional-changelog:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:@release-it/conventional-changelog:release":
-			"echo 'before:@release-it/conventional-changelog:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
-		"before:bump":
-			"echo 'before:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:@release-it/conventional-changelog:release' && echo 'version: ${version}, branchName: ${branchName}'",
+		"before:bump": "echo 'before:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:git:bump":
-			"echo 'before:git:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:git:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:git:init":
-			"echo 'before:git:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:git:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:git:release":
-			"echo 'before:git:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:git:release' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:github:bump":
-			"echo 'before:github:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:github:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:github:init":
-			"echo 'before:github:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:github:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:github:release":
-			"echo 'before:github:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
-		"before:init":
-			"echo 'before:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:github:release' && echo 'version: ${version}, branchName: ${branchName}'",
+		"before:init": "echo 'before:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:release":
-			"echo 'before:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:release' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:version:bump":
-			"echo 'before:version:bump' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:version:bump' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:version:init":
-			"echo 'before:version:init' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:version:init' && echo 'version: ${version}, branchName: ${branchName}'",
 		"before:version:release":
-			"echo 'before:version:release' && echo 'version: ${version}, name: ${name}, branchName: ${branchName}'",
+			"echo 'before:version:release' && echo 'version: ${version}, branchName: ${branchName}'",
 	},
 	npm: {
 		publish: false,
