@@ -2,6 +2,7 @@ const releaseItConfig = {
 	git: {
 		commitArgs: [],
 		pushArgs: [],
+		requireUpstream: false,
 		tagArgs: [],
 	},
 	github: {
