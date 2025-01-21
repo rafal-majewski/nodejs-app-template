@@ -13,7 +13,7 @@
 		"@stylistic/eslint-plugin": "2.13.0",
 		"@types/node": "22.10.7",
 		"@typescript-eslint/eslint-plugin": "8.21.0",
-		"@typescript-eslint/parser": "8.20.0",
+		"@typescript-eslint/parser": "8.21.0",
 		"eslint": "9.18.0",
 		"eslint-plugin-perfectionist": "3.9.1",
 		"prettier": "3.4.2",
