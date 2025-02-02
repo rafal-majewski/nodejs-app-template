@@ -6,4 +6,4 @@ The following tools have been configured:
 
 - [Development Containers](https://containers.dev) for a consistent development environment;
   - Visual Studio Code extensions:
- 
+    - [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) for Dockerfile support;
