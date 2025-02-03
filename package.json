@@ -8,7 +8,7 @@
 	},
 	"description": "Node.js app template",
 	"devDependencies": {
-		"@commitlint/cli": "19.6.1",
+		"@commitlint/cli": "19.7.1",
 		"@release-it/conventional-changelog": "10.0.0",
 		"@stylistic/eslint-plugin": "3.0.1",
 		"@types/node": "22.13.0",
