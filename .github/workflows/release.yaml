@@ -10,7 +10,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Download release"
-        uses: "robinraju/release-downloader@v1.11"
+        uses: "robinraju/release-downloader@v1.12"
         with:
           tag: "${{needs.release.outputs.release_version}}"
           tarBall: true
@@ -57,7 +57,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Download release"
-        uses: "robinraju/release-downloader@v1.11"
+        uses: "robinraju/release-downloader@v1.12"
         with:
           tag: "${{needs.release.outputs.release_version}}"
           tarBall: true
