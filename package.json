@@ -11,7 +11,7 @@
 		"@commitlint/cli": "19.8.0",
 		"@release-it/conventional-changelog": "10.0.1",
 		"@stylistic/eslint-plugin": "4.2.0",
-		"@types/node": "22.15.11",
+		"@types/node": "22.15.14",
 		"@typescript-eslint/eslint-plugin": "8.32.0",
 		"@typescript-eslint/parser": "8.32.0",
 		"eslint": "9.26.0",
