@@ -15,7 +15,7 @@
 		"@typescript-eslint/eslint-plugin": "8.32.1",
 		"@typescript-eslint/parser": "8.32.1",
 		"eslint": "9.26.0",
-		"eslint-plugin-perfectionist": "3.9.1",
+		"eslint-plugin-perfectionist": "4.12.3",
 		"prettier": "3.5.3",
 		"release-it": "19.0.2",
 		"testcontainers": "10.25.0",
