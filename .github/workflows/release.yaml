@@ -39,7 +39,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Download the built Docker image"
-        uses: "ishworkh/container-image-artifact-download@v2.0.0"
+        uses: "ishworkh/container-image-artifact-download@v2.1.0"
         with:
           image: "${{vars.DOCKER_REGISTRY_REPOSITORY_NAME}}:${{needs.build_docker_image.outputs.release_version}}"
       - name: "Login to Docker registry"
