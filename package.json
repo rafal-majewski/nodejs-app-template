@@ -4,7 +4,7 @@
 		"url": "https://github.com/Rafal-Majewski/nodejs-app-template/issues"
 	},
 	"dependencies": {
-		"envalid": "8.0.0"
+		"envalid": "8.1.0"
 	},
 	"description": "Node.js app template",
 	"devDependencies": {
