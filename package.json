@@ -17,7 +17,7 @@
 		"eslint": "9.31.0",
 		"eslint-plugin-perfectionist": "3.9.1",
 		"prettier": "3.6.2",
-		"release-it": "19.0.3",
+		"release-it": "19.0.4",
 		"testcontainers": "11.2.1",
 		"tsx": "4.20.3",
 		"typescript": "5.8.3"
