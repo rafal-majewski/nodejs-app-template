@@ -20,7 +20,7 @@
 		"release-it": "19.0.4",
 		"testcontainers": "11.5.1",
 		"tsx": "4.20.3",
-		"typescript": "5.8.3"
+		"typescript": "5.9.2"
 	},
 	"homepage": "https://github.com/Rafal-Majewski/nodejs-app-template#readme",
 	"license": "CC0-1.0",
