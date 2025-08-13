@@ -19,7 +19,7 @@
 		"prettier": "3.6.2",
 		"release-it": "19.0.4",
 		"testcontainers": "11.5.1",
-		"tsx": "4.20.3",
+		"tsx": "4.20.4",
 		"typescript": "5.9.2"
 	},
 	"homepage": "https://github.com/Rafal-Majewski/nodejs-app-template#readme",
