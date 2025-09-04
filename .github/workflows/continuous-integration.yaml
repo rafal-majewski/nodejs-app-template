@@ -51,7 +51,7 @@ jobs:
       - name: "Checkout repository"
         uses: "actions/checkout@v4"
       - name: "Run Hadolint"
-        uses: "hadolint/hadolint-action@v3.1.0"
+        uses: "hadolint/hadolint-action@v3.2.0"
         with:
           dockerfile: "Dockerfile"
   nodejs_test:
