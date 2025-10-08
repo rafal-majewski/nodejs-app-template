@@ -7,7 +7,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Build a Docker image"
         run: |
           docker build --tag=${{github.repository}}:${{github.sha}} --file=Dockerfile --build-arg="ALPINE_VERSION=${{env.ALPINE_VERSION}}" --build-arg="NODEJS_VERSION=${{env.NODEJS_VERSION}}" .
@@ -16,7 +16,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Setup Node.js"
         uses: "actions/setup-node@v4"
         with:
@@ -32,7 +32,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Setup Node.js"
         uses: "actions/setup-node@v4"
         with:
@@ -49,7 +49,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Run Hadolint"
         uses: "hadolint/hadolint-action@v3.1.0"
         with:
@@ -59,7 +59,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Setup Node.js"
         uses: "actions/setup-node@v4"
         with:
@@ -76,7 +76,7 @@ jobs:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout repository"
-        uses: "actions/checkout@v4"
+        uses: "actions/checkout@v5"
       - name: "Setup Node.js"
         uses: "actions/setup-node@v4"
         with:
